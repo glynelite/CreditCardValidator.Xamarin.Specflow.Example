@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"[]>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Credit Card Validator</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" />
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  initializeToc();
+});
+</script>
+    <!-- We are using Font Awesome - http://fortawesome.github.com/Font-Awesome - licensed under CC BY 3.0 -->
+  </head>
+  <body>
+    <div id="container">
+      <div id="top" />
+      <div id="toc">
+        <p class="tocCollapser" title="Collapse Table of Content">«</p>
+        <ul class="features">
+          <li class="file" id="root">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="file">
+            <span class="current">Credit Card Validator</span>
+          </li>
+          <li class="file">
+            <a href="Repl.html">REPL</a>
+          </li>
+        </ul>
+      </div>
+      <div id="feature">
+        <h1>Credit Card Validator</h1>
+        <div class="description">
+          <p>In order to validate a credit card number,
+as a user I can submit a number to the validator,
+to check if the number contains 16 digits.</p>
+        </div>
+        <ul id="scenarios">
+          <li class="scenario">
+            <div class="scenario-heading">
+              <h2></h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I am on the card number validator screen</li>
+              </ul>
+            </div>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="error-displayed-for-less-than-16-digits">
+              <h2>Error displayed for less than 16 digits</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter this number into the card number field: 123456789012345</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>the card number is too short error is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('error-displayed-for-less-than-16-digits')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="error-displayed-for-submissions-greater-than-16-digits">
+              <h2>Error displayed for submissions greater than 16 digits</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter this number into the card number field: 12345678901234567</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>card number is too long error is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('error-displayed-for-submissions-greater-than-16-digits')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="success-screen-loads-and-success-message-displayed-for-submissions-equal-to-16-digits">
+              <h2>Success screen loads and success message displayed for submissions equal to 16 digits</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter this number into the card number field: 1234567890123456</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>the validation success screen loads</li>
+                <li class="step">
+                  <span class="keyword">And </span>card number is valid message is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('success-screen-loads-and-success-message-displayed-for-submissions-equal-to-16-digits')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="make-multiple-validator-submissions">
+              <h2>Make multiple validator submissions</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I submit these numbers to the card validator:<div class="table_container"><table class="datatable"><thead><tr><th>CardNumber</th><th> </th></tr></thead><tbody><tr><td>123456789012325352356</td></tr><tr><td>1234567856</td></tr><tr><td>1239012345622343334562</td></tr><tr><td>911</td></tr><tr><td>0000000000000000</td></tr></tbody></table></div></li>
+                <li class="step">
+                  <span class="keyword">Then </span>every number was correctly validated</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('make-multiple-validator-submissions')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="success-screen-loads-and-success-message-displayed-for-random-16-digit-number">
+              <h2>Success screen loads and success message displayed for random 16 digit number</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter a random number of length 16</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>the validation success screen loads</li>
+                <li class="step">
+                  <span class="keyword">And </span>card number is valid message is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('success-screen-loads-and-success-message-displayed-for-random-16-digit-number')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="error-displayed-for-random-number-less-than-16-digits">
+              <h2>Error displayed for random number less than 16 digits</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter a random number of length less than 16</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>the card number is too short error is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('error-displayed-for-random-number-less-than-16-digits')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="error-displayed-for-random-number-greater-than-16-digits">
+              <h2>Error displayed for random number greater than 16 digits</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I enter a random number of minimum length 17 and maximum length 30</li>
+                <li class="step">
+                  <span class="keyword">And </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>card number is too long error is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('error-displayed-for-random-number-greater-than-16-digits')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+          <li class="scenario">
+            <div class="scenario-heading" id="error-displayed-for-empty-submissions">
+              <h2>Error displayed for empty submissions</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I have tapped the validate card number button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>not a card number error is displayed</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('error-displayed-for-empty-submissions')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <p>Test results generated for: -Credit_Card_Validator, version 1.0.0</p>
+        <p>Generated on: 30 April 2018 23:23:11</p>
+        <p>Produced by Pickles, version 2.18.2.0</p>
+      </div>
+    </div>
+  </body>
+</html>

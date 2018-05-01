@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"[]>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Features</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" />
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  initializeToc();
+});
+</script>
+    <!-- We are using Font Awesome - http://fortawesome.github.com/Font-Awesome - licensed under CC BY 3.0 -->
+  </head>
+  <body>
+    <div id="container">
+      <div id="top" />
+      <div id="toc">
+        <p class="tocCollapser" title="Collapse Table of Content">«</p>
+        <ul class="features">
+          <li class="file" id="root">
+            <span class="current">Home</span>
+          </li>
+          <li class="file">
+            <a href="CreditCardValidator.html">Credit Card Validator</a>
+          </li>
+          <li class="file">
+            <a href="Repl.html">REPL</a>
+          </li>
+        </ul>
+      </div>
+      <div id="feature">
+        <h1>Features</h1>
+        <ul class="list">
+          <li>
+            <a href="CreditCardValidator.html">
+              <span class="title">Credit Card Validator</span>
+              <span class="separator"> - </span>
+              <span class="description">In order to validate a credit card number,
+as a user I can submit a number to the validator,
+to check if the number contains 16 digits.</span>
+            </a>
+          </li>
+          <li>
+            <a href="Repl.html">
+              <span class="title">REPL</span>
+              <span class="separator"> - </span>
+              <span class="description">The REPL is helpful when creating UITests,
+it allows us to explore the user interface and create the queries and statements,
+so that the test may interact with the application.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <p>Test results generated for: -Credit_Card_Validator, version 1.0.0</p>
+        <p>Generated on: 30 April 2018 23:23:11</p>
+        <p>Produced by Pickles, version 2.18.2.0</p>
+      </div>
+    </div>
+  </body>
+</html>

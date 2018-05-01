@@ -66,9 +66,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventBindings\ErrorEvents.cs" />
-    <Compile Include="EventBindings\EventBase.cs" />
-    <Compile Include="EventBindings\BeforeEvents.cs" />
+    <Compile Include="Events\ErrorEvents.cs" />
+    <Compile Include="Events\EventBase.cs" />
+    <Compile Include="Events\BeforeEvents.cs" />
     <Compile Include="Features\Repl.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,11 +86,11 @@
     <Compile Include="Steps\Repl.cs" />
     <Compile Include="Steps\StepBase.cs" />
     <Compile Include="Steps\ValidatorSteps.cs" />
-    <Compile Include="TestContext\AppContext.cs" />
-    <Compile Include="TestContext\IScreenContext.cs" />
-    <Compile Include="TestContext\PlatformContext.cs" />
-    <Compile Include="TestContext\AndroidScreenContext.cs" />
-    <Compile Include="TestContext\iOSScreenContext.cs" />
+    <Compile Include="Context\AppContext.cs" />
+    <Compile Include="Context\IScreenContext.cs" />
+    <Compile Include="Context\PlatformContext.cs" />
+    <Compile Include="Context\AndroidScreenContext.cs" />
+    <Compile Include="Context\iOSScreenContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

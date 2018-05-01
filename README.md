@@ -5,7 +5,7 @@ This is an example of a Xamarin UI test framework that implements specflow.
 The credit card checker example app was downloaded from: https://developer.xamarin.com/guides/testcloud/uitest/quickstarts/
 
 ## Requirements
-Install specflow VS extension
+Install Specflow VS extension
 
 ## Generate Documentation
 These feature files are pickled. Enter this command into package manager console to generate documentation:

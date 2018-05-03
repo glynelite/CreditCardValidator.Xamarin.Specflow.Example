@@ -2,7 +2,7 @@
 
 namespace CreditCardValidator.Test.UI.Specflow
 {
-    public class iOSValidatorScreen : ScreenBase, IValidatorScreen
+    public class iOSValidatorScreen : IValidatorScreen
     {
         public Query CardNumberField { get; } = e => e.Marked("creditCardNumberText");
         public Query ValidateButton { get; } = e => e.Marked("validateButton");
@@ -10,10 +10,5 @@ namespace CreditCardValidator.Test.UI.Specflow
         public Query SuccessMessage { get; } = e => e.Marked("validationSuccessMessage");
         public Query ValidateScreenTitleBar { get; } = e => e.Marked("action_bar_title").Text("Enter Credit Card Number");
         public Query SuccessScreenTitleBar { get; } = e => e.Marked("action_bar_title").Text("Valid Credit Card");
-
-        public void TestMethod()
-        {
-            DoSomeGenericInteractions();
-        }
     }
 }

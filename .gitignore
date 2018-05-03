@@ -327,3 +327,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/CreditCardValidator.Test.UI.Specflow/Features/CardValidator.feature.cs
+/CreditCardValidator.Test.UI.Specflow/Features/FeatureTablesModel.cs

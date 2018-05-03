@@ -10,7 +10,5 @@ namespace CreditCardValidator.Test.UI.Specflow
         Query SuccessMessage { get; }
         Query ValidateScreenTitleBar { get; }
         Query SuccessScreenTitleBar { get; }
-
-        void TestMethod();
     } 
 }

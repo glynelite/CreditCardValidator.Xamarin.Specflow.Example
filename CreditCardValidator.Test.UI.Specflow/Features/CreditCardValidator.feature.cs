@@ -134,11 +134,109 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Make multiple validator submissions")]
-        public virtual void MakeMultipleValidatorSubmissions()
+        [NUnit.Framework.DescriptionAttribute("Success screen loads and success message displayed for random 16 digit number")]
+        public virtual void SuccessScreenLoadsAndSuccessMessageDisplayedForRandom16DigitNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make multiple validator submissions", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success screen loads and success message displayed for random 16 digit number", ((string[])(null)));
 #line 25
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 26
+ testRunner.Given("I enter a random number of length 16", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+ testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.Then("the validation success screen loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
+ testRunner.And("card number is valid message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Error displayed for random number less than 16 digits")]
+        public virtual void ErrorDisplayedForRandomNumberLessThan16Digits()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for random number less than 16 digits", ((string[])(null)));
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 32
+ testRunner.Given("I enter a random number of length less than 16", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+ testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.Then("the card number is too short error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Error displayed for random number greater than 16 digits")]
+        public virtual void ErrorDisplayedForRandomNumberGreaterThan16Digits()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for random number greater than 16 digits", ((string[])(null)));
+#line 36
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 37
+ testRunner.Given("I enter a random number of minimum length 17 and maximum length 30", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 38
+ testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.Then("card number is too long error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Error displayed for empty submissions")]
+        public virtual void ErrorDisplayedForEmptySubmissions()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for empty submissions", ((string[])(null)));
+#line 41
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 42
+ testRunner.Given("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 43
+ testRunner.Then("not a card number error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Make multiple validator submissions")]
+        [NUnit.Framework.TestCaseAttribute("12312312", "Credit card number is too short.", null)]
+        [NUnit.Framework.TestCaseAttribute("126776060600606004595956", "Credit card number is too long.", null)]
+        [NUnit.Framework.TestCaseAttribute("0000000000000000", "The credit card number is valid!", null)]
+        public virtual void MakeMultipleValidatorSubmissions(string cardNumber, string validation, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make multiple validator submissions", exampleTags);
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 46
+ testRunner.Given(string.Format("I enter this number into the card number field: {0}", cardNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 47
+ testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.Then(string.Format("this validation message is displayed: {0}", validation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Make multiple validator submissions2")]
+        public virtual void MakeMultipleValidatorSubmissions2()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make multiple validator submissions2", ((string[])(null)));
+#line 56
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
@@ -155,86 +253,40 @@ this.FeatureBackground();
                         "911"});
             table1.AddRow(new string[] {
                         "0000000000000000"});
-#line 26
+#line 57
  testRunner.Given("I submit these numbers to the card validator:", ((string)(null)), table1, "Given ");
-#line 33
+#line 64
  testRunner.Then("every number is correctly validated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Success screen loads and success message displayed for random 16 digit number")]
-        public virtual void SuccessScreenLoadsAndSuccessMessageDisplayedForRandom16DigitNumber()
+        [NUnit.Framework.DescriptionAttribute("Make multiple validator submissions3")]
+        public virtual void MakeMultipleValidatorSubmissions3()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Success screen loads and success message displayed for random 16 digit number", ((string[])(null)));
-#line 35
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make multiple validator submissions3", ((string[])(null)));
+#line 66
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 36
- testRunner.Given("I enter a random number of length 16", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 37
- testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.Then("the validation success screen loads", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 39
- testRunner.And("card number is valid message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Error displayed for random number less than 16 digits")]
-        public virtual void ErrorDisplayedForRandomNumberLessThan16Digits()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for random number less than 16 digits", ((string[])(null)));
-#line 41
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 42
- testRunner.Given("I enter a random number of length less than 16", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 43
- testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.Then("the card number is too short error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Error displayed for random number greater than 16 digits")]
-        public virtual void ErrorDisplayedForRandomNumberGreaterThan16Digits()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for random number greater than 16 digits", ((string[])(null)));
-#line 46
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 47
- testRunner.Given("I enter a random number of minimum length 17 and maximum length 30", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 48
- testRunner.And("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
- testRunner.Then("card number is too long error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Error displayed for empty submissions")]
-        public virtual void ErrorDisplayedForEmptySubmissions()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error displayed for empty submissions", ((string[])(null)));
-#line 51
-this.ScenarioSetup(scenarioInfo);
-#line 6
-this.FeatureBackground();
-#line 52
- testRunner.Given("I have tapped the validate card number button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 53
- testRunner.Then("not a card number error is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "CardNumber"});
+            table2.AddRow(new string[] {
+                        "123456789012325352356"});
+            table2.AddRow(new string[] {
+                        "1234567856"});
+            table2.AddRow(new string[] {
+                        "1239012345622343334562"});
+            table2.AddRow(new string[] {
+                        "911"});
+            table2.AddRow(new string[] {
+                        "0000000000000000"});
+#line 67
+ testRunner.Given("I submit these numbers to the card validator:", ((string)(null)), table2, "Given ");
+#line 74
+ testRunner.Then("every number is correctly validated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -27,17 +27,17 @@ namespace CreditCardValidator.Test.UI.Specflow.Features
 #line 1 "Repl.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUp()]
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "REPL", "The REPL is helpful when creating UITests,\r\nit allows us to explore the user inte" +
                     "rface and create the queries and statements,\r\nso that the test may interact with" +
                     " the application.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDown()]
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();

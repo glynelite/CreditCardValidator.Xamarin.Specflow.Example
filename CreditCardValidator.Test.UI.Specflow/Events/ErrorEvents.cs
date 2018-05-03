@@ -9,22 +9,24 @@ namespace CreditCardValidator.Test.UI.Specflow
     {
         private IApp _app;
         private Platform _platform;
+        private ScenarioContext _scenarioContext;
+        private FeatureContext _featureContext;
 
-        public ErrorEvents()
+        public ErrorEvents(ScenarioContext scenarioContext, FeatureContext featureContext)
         {
-            _app = scenarioContext.Get<IApp>();
-            _platform = scenarioContext.Get<Platform>();
+            _scenarioContext = scenarioContext;
+            _featureContext = featureContext;
         }
 
         [AfterStep]
         public void StepInfoOnError()
         {
-            if (scenarioContext.TestError != null)
+            if (_scenarioContext.TestError != null)
             {
-                var stepInfo = scenarioContext.StepContext.StepInfo;
+                var stepInfo = _scenarioContext.StepContext.StepInfo;
                 var stepDescription = stepInfo.StepDefinitionType + stepInfo.Text;
                 Console.WriteLine(stepDescription);
-                PrintTestEnvironmentInfo(_app, _platform);
+                PrintTestEnvironmentInfo(_scenarioContext, _featureContext, _app, _platform);
             }
         }
     }

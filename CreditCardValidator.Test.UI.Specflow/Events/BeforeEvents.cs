@@ -10,13 +10,22 @@ namespace CreditCardValidator.Test.UI.Specflow
         private IApp _app;
         private Platform _platform;
         private IScreenContext _screenContext;
+        private ScenarioContext _scenarioContext;
+        private FeatureContext _featureContext;
 
+
+        BeforeEvents(ScenarioContext scenarioContext, FeatureContext featureContext) 
+        {
+            _scenarioContext = scenarioContext;
+            _featureContext = featureContext;
+            _platform = new PlatformContext().GetPlatform();
+        }
+        
         [BeforeScenario(Order = Order.InitialiseApp)]
         public void InitialiseApp()
         {
-            _platform = new PlatformContext().GetPlatform();
             _app = AppContext.StartApp(_platform);
-            PrintTestEnvironmentInfo(_app, _platform);
+            PrintTestEnvironmentInfo(_scenarioContext, _featureContext, _app, _platform);
         }
 
         [BeforeScenario(Order = Order.InitialiseScreens)]
@@ -33,16 +42,16 @@ namespace CreditCardValidator.Test.UI.Specflow
                     break;
 
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new NotImplementedException();
             }
         }
 
         [BeforeScenario(Order = Order.FillDictionary)]
         public void BuildScenarioContext()
         {
-            scenarioContext.Set<IApp>(_app);
-            scenarioContext.Set<Platform>(_platform);
-            scenarioContext.Add(_platform.ToString(), _screenContext);
+            _scenarioContext.Set<IApp>(_app);
+            _scenarioContext.Set<Platform>(_platform);
+            _scenarioContext.Add(_platform.ToString(), _screenContext);
         }
     }
 }

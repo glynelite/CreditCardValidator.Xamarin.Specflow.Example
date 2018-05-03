@@ -7,16 +7,6 @@ namespace CreditCardValidator.Test.UI.Specflow
     [Binding]
     public class EventBase
     {
-        private FeatureContext _featureContext;
-        public ScenarioContext scenarioContext;
-
-
-        public EventBase()
-        {
-            _featureContext = FeatureContext.Current;
-            scenarioContext = ScenarioContext.Current;
-        }
-
         public class Order
         {
             public const int InitialiseApp = 1;
@@ -24,9 +14,9 @@ namespace CreditCardValidator.Test.UI.Specflow
             public const int FillDictionary = 3;
         }
 
-        public void PrintTestEnvironmentInfo(IApp app, Platform platform)
+        public void PrintTestEnvironmentInfo(ScenarioContext scenarioContext, FeatureContext featureContext, IApp app, Platform platform)
         {
-            var featureTitle = _featureContext.FeatureInfo.Title;
+            var featureTitle = featureContext.FeatureInfo.Title;
             var scenarioTitle = scenarioContext.ScenarioInfo.Title;
             var deviceId = app.Device.DeviceIdentifier;
             var deviceUri = app.Device.DeviceUri;

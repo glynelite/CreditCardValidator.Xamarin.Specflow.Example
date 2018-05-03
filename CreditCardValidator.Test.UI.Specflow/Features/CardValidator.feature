@@ -1,7 +1,7 @@
 ﻿Feature: Credit Card Validator
 	In order to validate a credit card number,
 	as a user I can submit a number to the validator,
-	to check if the number contains 16 digits.
+	to check if the number contains 16 digits. WOW
 
 Background: 
 	Given I am on the card number validator screen

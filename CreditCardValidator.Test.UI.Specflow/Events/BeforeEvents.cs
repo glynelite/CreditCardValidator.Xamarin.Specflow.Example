@@ -21,14 +21,14 @@ namespace CreditCardValidator.Test.UI.Specflow
             _platform = new PlatformContext().GetPlatform();
         }
         
-        [BeforeScenario(Order = Order.InitialiseApp)]
+        [BeforeScenario(Order = (int)Order.InitialiseApp)]
         public void InitialiseApp()
         {
             _app = AppContext.StartApp(_platform);
             PrintTestEnvironmentInfo(_scenarioContext, _featureContext, _app, _platform);
         }
 
-        [BeforeScenario(Order = Order.InitialiseScreens)]
+        [BeforeScenario(Order = (int)Order.InitialiseScreens)]
         public void InitialiseScreenContexts()
         {
             switch (_platform)
@@ -46,7 +46,7 @@ namespace CreditCardValidator.Test.UI.Specflow
             }
         }
 
-        [BeforeScenario(Order = Order.FillDictionary)]
+        [BeforeScenario(Order = (int)Order.FillDictionary)]
         public void BuildScenarioContext()
         {
             _scenarioContext.Set<IApp>(_app);

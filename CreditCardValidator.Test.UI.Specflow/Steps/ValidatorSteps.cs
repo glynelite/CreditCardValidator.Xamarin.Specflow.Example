@@ -36,8 +36,8 @@ namespace CreditCardValidator.Test.UI.Specflow
             _app.EnterText(_screen.CardNumberField, cardNumber);
         }
 
-        [Given(@"I have tapped the validate card number button")]
-        public void GivenTapValidateButton()
+        [When(@"I tap the validate card number button")]
+        public void WhenTapValidateButton()
         {
             _app.Tap(_screen.ValidateButton);
         }

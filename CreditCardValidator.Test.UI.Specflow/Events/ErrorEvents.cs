@@ -16,6 +16,8 @@ namespace CreditCardValidator.Test.UI.Specflow
         {
             _scenarioContext = scenarioContext;
             _featureContext = featureContext;
+            _platform = scenarioContext.Get<Platform>();
+            _app = scenarioContext.Get<IApp>();
         }
 
         [AfterStep]

@@ -7,12 +7,12 @@ namespace CreditCardValidator.Test.UI.Specflow
     [Binding]
     public class EventBase
     {
-        public class Order
+        public enum Order
         {
-            public const int InitialiseApp = 1;
-            public const int InitialiseScreens = 2;
-            public const int FillDictionary = 3;
-        }
+            InitialiseApp = 1,
+            InitialiseScreens = 2,
+            FillDictionary = 3
+        };
 
         public void PrintTestEnvironmentInfo(ScenarioContext scenarioContext, FeatureContext featureContext, IApp app, Platform platform)
         {

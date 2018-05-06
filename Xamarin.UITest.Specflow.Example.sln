@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.Droid",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator", "CreditCardValidator\CreditCardValidator.csproj", "{99A825A6-6F99-4B94-9F65-E908A6347F1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.Test.UI.Specflow", "CreditCardValidator.Test.UI.Specflow\CreditCardValidator.Test.UI.Specflow.csproj", "{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.UITest.Specflow", "CreditCardValidator.Test.UI.Specflow\CreditCardValidator.UITest.Specflow.csproj", "{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.iOS", "CreditCardValidator.iOS\CreditCardValidator.iOS.csproj", "{90F3C584-FD69-4926-9903-6B9771847782}"
 EndProject

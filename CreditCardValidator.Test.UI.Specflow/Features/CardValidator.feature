@@ -69,7 +69,8 @@ Scenario Outline: Make multiple validator submissions
 	Then this validation message is displayed: <Validation>
 
 Examples:
-	| CardNumber				| Validation						|
-	| 12312312					|  Credit card number is too short. |
-	| 126776060600606004595956  |  Credit card number is too long.  |
-	| 0000000000000000			|  The credit card number is valid! |
+	| CardNumber               | Validation                       |
+	| 12312312                 | Credit card number is too short. |
+	| 126776060600606004595956 | Credit card number is too long.  |
+	| 0000000000000000         | The credit card number is valid! |
+	|                          | This is not a credit card number.|

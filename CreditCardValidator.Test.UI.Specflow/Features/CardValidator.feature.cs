@@ -287,6 +287,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("12312312", "Credit card number is too short.", null)]
         [NUnit.Framework.TestCaseAttribute("126776060600606004595956", "Credit card number is too long.", null)]
         [NUnit.Framework.TestCaseAttribute("0000000000000000", "The credit card number is valid!", null)]
+        [NUnit.Framework.TestCaseAttribute("", "This is not a credit card number.", null)]
         public virtual void MakeMultipleValidatorSubmissions(string cardNumber, string validation, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Make multiple validator submissions", exampleTags);

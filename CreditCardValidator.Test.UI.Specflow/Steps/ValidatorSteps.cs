@@ -18,6 +18,20 @@ namespace CreditCardValidator.Test.UI.Specflow
             _screen = scenarioContext.Get<IScreenContext>().GetValidatorScreen;
         }
 
+        [Given(@"these credit card numbers exist")]
+        public void GivenTheseCreditCardNumbersExist(Table table)
+        {
+            var cardNumbers = table.CreateSet<FeatureTables.CreditCardNumber>();
+            // Logic to add objects to db
+        }
+
+        [Given(@"these validator inputs exist")]
+        public void GivenTheseValidatorInputsExist(Table table)
+        {
+            var inputs = table.CreateDynamicSet();
+            // Logic to add objects to db
+        }
+
         [Given(@"I am on the card number validator screen")]
         public void GivenOnCreditCardValidatorScreen()
         {
@@ -95,20 +109,6 @@ namespace CreditCardValidator.Test.UI.Specflow
             message.Should().Be(validationMessage);
         }
 
-        [Given(@"these credit card numbers exist")]
-        public void GivenTheseCreditCardNumbersExist(Table table)
-        {
-            var cardNumbers = table.CreateSet<FeatureTables.CreditCardNumber>();
-            // Logic to add objects to db
-        }
-
-        [Given(@"these validator inputs exist")]
-        public void GivenTheseValidatorInputsExist(Table table)
-        {
-            var inputs = table.CreateDynamicSet();
-            // Logic to add objects to db
-        }
-
         [Given(@"I enter max integer")]
         public void GivenEnterMaxInteger()
         {
@@ -120,6 +120,5 @@ namespace CreditCardValidator.Test.UI.Specflow
         {
             _app.EnterText(_screen.CardNumberField, int.MinValue.ToString());
         }
-
     }
 }

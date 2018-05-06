@@ -13,7 +13,6 @@ namespace CreditCardValidator.Test.UI.Specflow
         private IScreenContext _screenContext;
         private ScenarioContext _scenarioContext;
         private FeatureContext _featureContext;
-        private ILoggerFactory _loggerFactory;
         private ILogger _logger;
 
 
@@ -27,10 +26,10 @@ namespace CreditCardValidator.Test.UI.Specflow
         [BeforeScenario(Order = (int)Order.BuildLogger)]
         public void BuildLogger()
         {
-            _loggerFactory = new LoggerFactory()
+            var loggerFactory = new LoggerFactory()
                 .AddConsole()
                 .AddDebug();
-            _logger = _loggerFactory.CreateLogger<BeforeEvents>();
+            _logger = loggerFactory.CreateLogger<BeforeEvents>();
         }
 
         [BeforeScenario(Order = (int)Order.InitialiseApp)]
@@ -61,9 +60,9 @@ namespace CreditCardValidator.Test.UI.Specflow
         [BeforeScenario(Order = (int)Order.BuildScenarioContext)]
         public void BuildScenarioContext()
         {
-            _scenarioContext.Set<ILoggerFactory>(_loggerFactory);
-            _scenarioContext.Set<IApp>(_app);
+            _scenarioContext.Set<ILogger>(_logger);
             _scenarioContext.Set<Platform>(_platform);
+            _scenarioContext.Set<IApp>(_app);
             _scenarioContext.Set<IScreenContext>(_screenContext);
         }
     }

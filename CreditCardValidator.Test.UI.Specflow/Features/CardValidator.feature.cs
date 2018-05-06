@@ -32,7 +32,7 @@ namespace CreditCardValidator.Test.UI.Specflow.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Credit Card Validator", "\tIn order to validate a credit card number,\r\n\tas a user I can submit a number to " +
-                    "the validator,\r\n\tto check if the number contains 16 digits.", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "the validator app,\r\n\tto check if the number contains 16 digits.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

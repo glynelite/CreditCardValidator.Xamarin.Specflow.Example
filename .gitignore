@@ -8,10 +8,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.feature.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-*.feature.cs
 
 # Build results
 [Dd]ebug/

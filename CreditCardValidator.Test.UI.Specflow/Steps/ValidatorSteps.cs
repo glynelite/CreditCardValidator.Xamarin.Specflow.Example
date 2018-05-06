@@ -1,8 +1,5 @@
 ﻿using FluentAssertions;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using Xamarin.UITest;
@@ -13,14 +10,12 @@ namespace CreditCardValidator.Test.UI.Specflow
     public class ValidatorSteps : StepBase
     {
         private IValidatorScreen _screen;
-        private StringBuilder _errors;
         private IApp _app;
 
         public ValidatorSteps(ScenarioContext scenarioContext)
         {
             _app = scenarioContext.Get<IApp>();
             _screen = scenarioContext.Get<IScreenContext>().GetValidatorScreen;
-            _errors = new StringBuilder();
         }
 
         [Given(@"I am on the card number validator screen")]
@@ -100,54 +95,31 @@ namespace CreditCardValidator.Test.UI.Specflow
             message.Should().Be(validationMessage);
         }
 
-
-        [Given(@"I submit these numbers to the card validator:")]
-        public void GivenISubmitTheseNumbersToTheCardValidator(Table table)
+        [Given(@"these credit card numbers exist")]
+        public void GivenTheseCreditCardNumbersExist(Table table)
         {
-            var _table = table.CreateDynamicSet(false);
-
-            foreach(var row in _table)
-            {
-                _app.EnterText(_screen.CardNumberField, row.CardNumber);
-                _app.Tap(_screen.ValidateButton);
-
-                try
-                {
-                    if (row.CardNumber.Length < 16)
-                    {
-                        ThenCreditCardTooShortError();
-                    }
-                    else if (row.CardNumber.Length == 16)
-                    {
-                        ThenCardNumberValidMessage();
-                        _app.Back();
-                        _app.WaitForElement(_screen.ValidateScreenTitleBar);
-                    }
-                    else if (row.CardNumber.Length > 16)
-                    {
-                        ThenCardNumberTooLongError();
-                    }
-                }
-                catch(Exception e)
-                {
-                    _errors.Append(e);
-                }
-
-                _app.ClearText(_screen.CardNumberField);
-            }
+            var cardNumbers = table.CreateSet<FeatureTables.CreditCardNumber>();
+            // Logic to add objects to db
         }
 
-        [Then(@"every number is correctly validated")]
-        public void ThenrCorrectlyValidated()
+        [Given(@"these validator inputs exist")]
+        public void GivenTheseValidatorInputsExist(Table table)
         {
-            var e = String.Empty;
-
-            if(_errors != null)
-            {
-                e = _errors.ToString();
-            }
-            
-            _errors.Should().Be(null, $"because the submit card number loop only appends to string builder on error. Errors: {e}");
+            var inputs = table.CreateDynamicSet();
+            // Logic to add objects to db
         }
+
+        [Given(@"I enter max integer")]
+        public void GivenEnterMaxInteger()
+        {
+            _app.EnterText(_screen.CardNumberField, int.MaxValue.ToString());
+        }
+
+        [Given(@"I enter min integer")]
+        public void GivenEnterMinInteger()
+        {
+            _app.EnterText(_screen.CardNumberField, int.MinValue.ToString());
+        }
+
     }
 }

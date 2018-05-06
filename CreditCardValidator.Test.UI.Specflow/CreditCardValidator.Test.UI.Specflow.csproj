@@ -94,14 +94,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Events\LogEvents.cs" />
-    <Compile Include="Events\EventBase.cs" />
-    <Compile Include="Events\BeforeEvents.cs" />
+    <Compile Include="Bindings\LogEvents.cs" />
+    <Compile Include="Bindings\EventBase.cs" />
+    <Compile Include="Bindings\BeforeEvents.cs" />
     <Compile Include="Features\CardValidator.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CardValidator.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\FeatureTables.cs" />
     <Compile Include="Features\Repl.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

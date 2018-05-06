@@ -1,10 +1,21 @@
 ﻿Feature: Credit Card Validator
 	In order to validate a credit card number,
 	as a user I can submit a number to the validator,
-	to check if the number contains 16 digits. WOW
+	to check if the number contains 16 digits.
 
 Background: 
 	Given I am on the card number validator screen
+	And these credit card numbers exist
+		| CardNumber            | ExpiryDate |
+		| 123456789012325352356 |  10/10/2020|
+	And these validator inputs exist
+		| Input						|
+		| abcdefghijklmnopqrstuvwxyz|
+
+Scenario: Cannot submit none numeric characters
+	Given I enter this number into the card number field: abcdefg
+	When I tap the validate card number button
+	Then the card number is too short error is displayed
 
 Scenario: Error displayed for less than 16 digits
 	Given I enter this number into the card number field: 123456789012345
@@ -42,6 +53,21 @@ Scenario: Error displayed for empty submissions
 	When I tap the validate card number button
 	Then not a card number error is displayed
 
+Scenario: Error displayed for max integer
+	Given I enter max integer
+	When I tap the validate card number button
+	Then card number is too long error is displayed
+
+Scenario: Error displayed for min integer
+	Given I enter min integer
+	When I tap the validate card number button
+	Then the card number is too short error is displayed
+
+Scenario: Error displayed for zero submissions
+	Given I enter this number into the card number field: 0
+	When I tap the validate card number button
+	Then card number is too long error is displayed
+
 Scenario Outline: Make multiple validator submissions
 	Given I enter this number into the card number field: <CardNumber>
 	When I tap the validate card number button
@@ -52,25 +78,3 @@ Examples:
 	| 12312312					|  Credit card number is too short. |
 	| 126776060600606004595956  |  Credit card number is too long.  |
 	| 0000000000000000			|  The credit card number is valid! |
-
-Scenario: Make multiple validator submissions2
-	Given I submit these numbers to the card validator:
-	| CardNumber             |
-	| 123456789012325352356  |
-	| 1234567856             |
-	| 1239012345622343334562 |
-	| 911                    |
-	| 0000000000000000		 |
-	Then every number is correctly validated
-
-Scenario: Make multiple validator submissions3
-	Given I submit these numbers to the card validator:
-	| CardNumber             |
-	| 123456789012325352356  |
-	| 1234567856             |
-	| 1239012345622343334562 |
-	| 911                    |
-	| 0000000000000000		 |
-	Then every number is correctly validated
-
-

@@ -12,11 +12,6 @@ Background:
 		| Input						|
 		| abcdefghijklmnopqrstuvwxyz|
 
-Scenario: Cannot submit none numeric characters
-	Given I enter this number into the card number field: abcdefg
-	When I tap the validate card number button
-	Then the card number is too short error is displayed
-
 Scenario: Error displayed for less than 16 digits
 	Given I enter this number into the card number field: 123456789012345
 	When I tap the validate card number button
@@ -63,10 +58,10 @@ Scenario: Error displayed for min integer
 	When I tap the validate card number button
 	Then the card number is too short error is displayed
 
-Scenario: Error displayed for zero submissions
+Scenario: Error displayed for zero 
 	Given I enter this number into the card number field: 0
 	When I tap the validate card number button
-	Then card number is too long error is displayed
+	Then the card number is too short error is displayed
 
 Scenario Outline: Make multiple validator submissions
 	Given I enter this number into the card number field: <CardNumber>

@@ -8,7 +8,7 @@ namespace CreditCardValidator.Test.UI.Specflow
     
     public class PlatformContext
     {
-        private readonly Platform _platform;
+        private Platform _platform;
 
         public PlatformContext(Platform platform)
         {

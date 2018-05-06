@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using TechTalk.SpecFlow;
 using Xamarin.UITest;
 
@@ -12,6 +13,8 @@ namespace CreditCardValidator.Test.UI.Specflow
         private IScreenContext _screenContext;
         private ScenarioContext _scenarioContext;
         private FeatureContext _featureContext;
+        private ILoggerFactory _loggerFactory;
+        private ILogger _logger;
 
 
         BeforeEvents(ScenarioContext scenarioContext, FeatureContext featureContext) 
@@ -20,12 +23,21 @@ namespace CreditCardValidator.Test.UI.Specflow
             _featureContext = featureContext;
             _platform = new PlatformContext().GetPlatform();
         }
-        
+
+        [BeforeScenario(Order = (int)Order.BuildLogger)]
+        public void BuildLogger()
+        {
+            _loggerFactory = new LoggerFactory()
+                .AddConsole()
+                .AddDebug();
+            _logger = _loggerFactory.CreateLogger<BeforeEvents>();
+        }
+
         [BeforeScenario(Order = (int)Order.InitialiseApp)]
         public void InitialiseApp()
         {
             _app = AppContext.StartApp(_platform);
-            PrintTestEnvironmentInfo(_scenarioContext, _featureContext, _app, _platform);
+            LogTestInfo("App initialised", _scenarioContext, _featureContext, _app, _platform, _logger);
         }
 
         [BeforeScenario(Order = (int)Order.InitialiseScreens)]
@@ -46,12 +58,13 @@ namespace CreditCardValidator.Test.UI.Specflow
             }
         }
 
-        [BeforeScenario(Order = (int)Order.FillDictionary)]
+        [BeforeScenario(Order = (int)Order.BuildScenarioContext)]
         public void BuildScenarioContext()
         {
+            _scenarioContext.Set<ILoggerFactory>(_loggerFactory);
             _scenarioContext.Set<IApp>(_app);
             _scenarioContext.Set<Platform>(_platform);
-            _scenarioContext.Add(_platform.ToString(), _screenContext);
+            _scenarioContext.Set<IScreenContext>(_screenContext);
         }
     }
 }

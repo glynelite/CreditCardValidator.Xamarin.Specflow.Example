@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,16 @@ namespace CreditCardValidator.Test.UI.Specflow
         private StringBuilder _errors;
         private IApp _app;
         private string _platform;
+        private ILoggerFactory _loggerFactory;
+        private ILogger _logger;
 
         public ValidatorSteps(ScenarioContext scenarioContext)
         {
             _app = scenarioContext.Get<IApp>();
             _platform = scenarioContext.Get<Platform>().ToString();
-            _screen = scenarioContext.Get<IScreenContext>(_platform).GetValidatorScreen;
+            _screen = scenarioContext.Get<IScreenContext>().GetValidatorScreen;
             _errors = new StringBuilder();
+
         }
 
         [Given(@"I am on the card number validator screen")]

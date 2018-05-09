@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.Droid",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator", "CreditCardValidator\CreditCardValidator.csproj", "{99A825A6-6F99-4B94-9F65-E908A6347F1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.UITest.Specflow", "CreditCardValidator.Test.UI.Specflow\CreditCardValidator.UITest.Specflow.csproj", "{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.iOS", "CreditCardValidator.iOS\CreditCardValidator.iOS.csproj", "{90F3C584-FD69-4926-9903-6B9771847782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardValidator.UITest.Specflow", "CreditCardValidator.UITest.Specflow\CreditCardValidator.UITest.Specflow.csproj", "{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +49,16 @@ Global
 		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Release|iPhone.Build.0 = Release|Any CPU
 		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{99A825A6-6F99-4B94-9F65-E908A6347F1E}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhone.Build.0 = Debug|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{90F3C584-FD69-4926-9903-6B9771847782}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhone.ActiveCfg = Release|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhone.Build.0 = Release|iPhone
+		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -61,16 +71,6 @@ Global
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Release|iPhone.Build.0 = Release|Any CPU
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{048C57FD-A3A8-41E5-94B6-C41C3B4F5D95}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhone.Build.0 = Debug|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{90F3C584-FD69-4926-9903-6B9771847782}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{90F3C584-FD69-4926-9903-6B9771847782}.Release|Any CPU.ActiveCfg = Release|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhone.ActiveCfg = Release|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhone.Build.0 = Release|iPhone
-		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{90F3C584-FD69-4926-9903-6B9771847782}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

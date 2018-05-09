@@ -3,15 +3,6 @@
 	as a user I can submit a number to the validator app,
 	to check if the number contains 16 digits.
 
-Background: 
-	Given I am on the card number validator screen
-	And these credit card numbers exist
-		| CardNumber            | ExpiryDate |
-		| 123456789012325352356 |  10/10/2020|
-	And these validator inputs exist
-		| Input						|
-		| abcdefghijklmnopqrstuvwxyz|
-
 Scenario: Error displayed for less than 16 digits
 	Given I enter this number into the card number field: 123456789012345
 	When I tap the validate card number button

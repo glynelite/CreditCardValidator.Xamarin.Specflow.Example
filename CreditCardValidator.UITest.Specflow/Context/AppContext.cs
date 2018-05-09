@@ -26,7 +26,7 @@ namespace CreditCardValidator.Test.UI.Specflow
                     .StartApp();
 
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new NotImplementedException(platform);
             }
         }
     }

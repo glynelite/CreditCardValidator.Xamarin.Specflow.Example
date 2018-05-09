@@ -11,7 +11,7 @@ namespace CreditCardValidator.Test.UI.Specflow
         {
             BuildLogger = 1,
             InitialiseApp = 2,
-            InitialiseScreens = 3,
+            InitialiseScreenContext = 3,
             BuildScenarioContext = 4
         };
 

@@ -15,7 +15,6 @@ namespace CreditCardValidator.Test.UI.Specflow
         private FeatureContext _featureContext;
         private ILogger _logger;
 
-
         BeforeEvents(ScenarioContext scenarioContext, FeatureContext featureContext) 
         {
             _scenarioContext = scenarioContext;
@@ -39,7 +38,7 @@ namespace CreditCardValidator.Test.UI.Specflow
             LogTestInfo("App initialised", _scenarioContext, _featureContext, _app, _platform, _logger);
         }
 
-        [BeforeScenario(Order = (int)Order.InitialiseScreens)]
+        [BeforeScenario(Order = (int)Order.InitialiseScreenContext)]
         public void InitialiseScreenContexts()
         {
             switch (_platform)
@@ -53,7 +52,7 @@ namespace CreditCardValidator.Test.UI.Specflow
                     break;
 
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException(_platform.ToString());
             }
         }
 

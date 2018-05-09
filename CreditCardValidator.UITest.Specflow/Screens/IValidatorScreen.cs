@@ -1,14 +1,14 @@
-﻿using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
+﻿using AppQuery = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
 namespace CreditCardValidator.Test.UI.Specflow
 {
     public interface IValidatorScreen
     {
-        Query CardNumberField { get; }
-        Query ValidateButton { get; }
-        Query ErrorMessage { get; }
-        Query SuccessMessage { get; }
-        Query ValidateScreenTitleBar { get; }
-        Query SuccessScreenTitleBar { get; }
+        AppQuery CardNumberField { get; }
+        AppQuery ValidateButton { get; }
+        AppQuery ErrorMessage { get; }
+        AppQuery SuccessMessage { get; }
+        AppQuery ValidateScreenTitleBar { get; }
+        AppQuery SuccessScreenTitleBar { get; }
     } 
 }

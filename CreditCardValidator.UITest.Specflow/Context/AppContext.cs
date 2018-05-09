@@ -26,7 +26,7 @@ namespace CreditCardValidator.Test.UI.Specflow
                     .StartApp();
 
                 default:
-                    throw new NotImplementedException(platform);
+                    throw new NotImplementedException(platform.ToString());
             }
         }
     }

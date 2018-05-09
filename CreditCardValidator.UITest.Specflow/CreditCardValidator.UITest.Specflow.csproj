@@ -102,7 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CardValidator.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\FeatureTables.cs" />
     <Compile Include="Screens\Android\AndroidValidatorScreen.cs" />
     <Compile Include="Screens\iOS\iOSValidatorScreen.cs" />
     <Compile Include="Screens\IValidatorScreen.cs" />

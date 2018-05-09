@@ -24,7 +24,6 @@ namespace CreditCardValidator.Test.UI.Specflow
             var platformName = platform;
 
             logger.LogInformation($"Message:{message}\nFeature:{featureTitle}\nScenario:{scenarioTitle}\nDevice:{deviceId}\nDeviceUri:{deviceUri}\nPlatform:{platformName}");
-            //Console.WriteLine($"Feature:{featureTitle}\nScenario:{scenarioTitle}\nDevice:{deviceId}\nDeviceUri:{deviceUri}\nPlatform:{platformName}");
         }
     }    
 }
